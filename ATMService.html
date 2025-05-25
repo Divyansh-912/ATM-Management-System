@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ATM System</h1>
+        <form id="atmForm">
+            <label for="action">Select Action:</label>
+            <select id="action" name="action">
+                <option value="create">Create Account</option>
+                <option value="deposit">Deposit</option>
+                <option value="withdraw">Withdraw</option>
+                <option value="display">Display Accounts</option>
+            </select>
+
+            <div class="input-group">
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" name="accountNumber">
+            </div>
+
+            <div class="input-group">
+                <label for="holderName">Holder Name:</label>
+                <input type="text" id="holderName" name="holderName">
+            </div>
+
+            <div class="input-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount">
+            </div>
+
+            <div class="input-group">
+                <label for="pin">PIN (4-digits):</label>
+                <input type="password" id="pin" name="pin" maxlength="4">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="output"> Available Balance : 5000</div>
+    </div>
+    <script src="atm-backend.js">
+        
+      
+  async function createAccount() {
+    const response = await fetch('/createAccount', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        number: '1234',
+        name: 'John Doe',
+        balance: 1000,
+        pin: '1234'
+      })
+    });
+    const data = await response.json();
+    if(data.success) alert('Account created!');
+    else alert('Error: ' + data.error);
+  }
+
+
+        document.getElementById('atmForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('output').innerText = "This is a placeholder. Backend not connected.";
+        });
+    </script>
+</body>
+</html>

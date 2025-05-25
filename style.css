@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("digital-rupee-technology-background-design_1017-36659.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90vw;
+    max-width: 70vh;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4vh;
+    border-radius: 1.5vh;
+    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 3vh;
+    margin-bottom: 3vh;
+}
+
+.input-group {
+    margin-bottom: 2.5vh;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 1vh;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.input-group input,
+select {
+    width: 100%;
+    padding: 1.5vh;
+    font-size: 1.8vh;
+    border: 0.2vh solid #ccc;
+    border-radius: 0.8vh;
+}
+
+button {
+    width: 100%;
+    padding: 1.8vh;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 2vh;
+    border-radius: 0.8vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#output {
+    margin-top: 2.5vh;
+    padding: 1.5vh;
+    background-color: #e9ecef;
+    border-radius: 0.8vh;
+    min-height: 7vh;
+    font-size: 1.8vh;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 3vh;
+        max-width: 90vw;
+    }
+
+    h1 {
+        font-size: 2.5vh;
+    }
+
+    button, .input-group input, select {
+        font-size: 1.6vh;
+        padding: 1.4vh;
+    }
+
+    #output {
+        font-size: 1.5vh;
+    }
+}
